@@ -1,0 +1,71 @@
+<section class="container">
+    <div class="section-heading">
+        <div class="section-title-row">
+            <span class="section-badge">02</span>
+            <span class="section-title">Projects</span>
+        </div>
+
+        <p class="section-description">
+            A selection of applications and systems I've designed and developed.
+        </p>
+    </div>
+
+    <!-- Project Filters -->
+    <div class="project-filters">
+        @for (item of filters; track item) {
+        <button mat-stroked-button type="button" [class.active]="filter === item" (click)="setFilter(item)">
+            {{ item }}
+        </button>
+        }
+    </div>
+    <!-- Projects -->
+    <div class="projects">
+        @for (project of filteredProjects; track project.title) {
+        <mat-card class="project">
+            <mat-card-content>
+                <span class="project-category">
+                    {{ project.category }}
+                </span>
+                @if (project.comingSoon) {
+                <span class="coming-soon">
+                    Coming Soon
+                </span>
+                }
+                <h3>
+                    {{ project.title }}
+                </h3>
+                <p class="project-description">
+                    {{ project.description }}
+                </p>
+                <div class="technologies">
+                    @for (tech of project.technologies; track tech) {
+                    <span class="tech-chip">
+                        {{ tech }}
+                    </span>
+                    }
+                </div>
+                <!-- Project Link -->
+                @if (project.link) {
+                <a mat-icon-button class="project-link" [href]="project.link" target="_blank" rel="noopener noreferrer"
+                    [attr.aria-label]="'View ' + project.title">
+                    <mat-icon>arrow_outward</mat-icon>
+                </a>
+                } @else if (project.comingSoon) {
+                <span class="project-link coming-soon-icon" aria-label="Coming soon">
+                    <mat-icon>schedule</mat-icon>
+                </span>
+                } @else {
+                <span class="project-link disabled-link" aria-label="Project link unavailable">
+                    <mat-icon>arrow_outward</mat-icon>
+                </span>
+                }
+            </mat-card-content>
+        </mat-card>
+        } @empty {
+        <div class="no-projects">
+            <mat-icon>folder_off</mat-icon>
+            <p>No projects found.</p>
+        </div>
+        }
+    </div>
+</section>

@@ -1,0 +1,319 @@
+.navbar {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(7, 8, 13, 0.78);
+  backdrop-filter: blur(20px);
+  animation: navFadeIn 0.6s ease;
+}
+
+.nav-container {
+  width: min(1180px, calc(100% - 40px));
+  height: 78px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.brand:hover {
+  opacity: 0.8;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  color: #9d96ff;
+  background: rgba(255, 255, 255, 0.04);
+  font-family: verdana;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.brand:hover .brand-mark {
+  border-color: rgba(157, 150, 255, 0.4);
+  background: rgba(157, 150, 255, 0.08);
+}
+
+.brand-name {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.brand-name span {
+  color: #8178ff;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.desktop-nav a {
+  position: relative;
+
+  padding: 10px 14px;
+
+  color: #8c91a3;
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.desktop-nav a:hover {
+  transform: translateY(-1px);
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  color: white;
+}
+
+.desktop-nav a.active::after {
+  content: '';
+
+  position: absolute;
+
+  bottom: 2px;
+  left: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: #8178ff;
+
+  box-shadow: 0 0 12px #8178ff;
+
+  animation: dotPop 0.3s ease;
+}
+
+.contact-button {
+  padding: 11px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 100px;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  font-size: 13px;
+  text-decoration: none;
+
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.24);
+  transform: translateY(-1px);
+}
+
+.contact-button span {
+  margin-left: 8px;
+  color: #958eff;
+  transition: transform 0.25s ease;
+}
+
+.contact-button:hover span {
+  transform: translateX(3px);
+}
+
+.menu-button,
+.mobile-nav {
+  display: none;
+}
+
+.menu-button {
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.menu-button:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.menu-button span {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+// Hamburger -> X animation when menu is open
+.menu-button[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-button[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+
+  .desktop-nav,
+  .contact-button {
+    display: none;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    width: 17px;
+    height: 1px;
+
+    background: white;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px 20px 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-nav.slide-out {
+    animation: slideUp 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #9a9ead;
+    text-decoration: none;
+
+    transition: color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .mobile-nav a:hover {
+    color: white;
+    padding-left: 6px;
+  }
+
+}
+
+// ===== Keyframes =====
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dotPop {
+  from {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+}
+
+// ===== Scroll fade-in / fade-out for page sections =====
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-card);
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+
+    &:hover {
+        transform: scale(1.08);
+        border-color: var(--accent);
+    }
+}

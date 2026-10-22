@@ -1,0 +1,128 @@
+.footer {
+  margin-top: 80px;
+  padding: 45px 20px 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #05060a;
+}
+
+.footer-container {
+  width: min(1180px, 100%);
+  margin: auto;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-logo {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(129, 120, 255, 0.35);
+  border-radius: 10px;
+  color: #8178ff;
+  background: rgba(129, 120, 255, 0.06);
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: rotate(-5deg);
+  border-color: #8178ff;
+  box-shadow: 0 0 20px rgba(129, 120, 255, 0.25);
+}
+
+.footer-brand strong {
+  display: block;
+  color: #f5f7ff;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+
+.footer-brand strong span {
+  color: #8178ff;
+}
+
+.footer-brand small {
+  display: block;
+  margin-top: 3px;
+  color: #777c8e;
+  font-size: 11px;
+}
+
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  color: #8c91a3;
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
+  animation: pulse 2s infinite;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #686d7d;
+  font-size: 11px;
+}
+
+.separator {
+  color: #8178ff;
+}
+
+.code-mark {
+  margin-left: auto;
+  color: #8178ff;
+  opacity: 0.7;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 35px 20px 20px;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .code-mark {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,513 @@
+/* =========================================
+   PAGE
+========================================= */
+
+.page {
+  min-height: 100vh;
+  padding: 160px max(20px, calc((100vw - 1100px) / 2)) 100px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 38px;
+  height: 38px;
+  padding: 0 10px;
+
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 999px;
+
+  color: var(--mat-sys-primary);
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-heading {
+  flex: 1;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: var(--mat-sys-on-surface);
+
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.title-dot {
+  color: var(--mat-sys-primary);
+}
+
+.section-description {
+  max-width: 600px;
+  margin: 18px 0 0;
+
+  color: var(--mat-sys-on-surface-variant);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   PROJECT FILTERS
+========================================= */
+
+.project-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 60px 0 25px;
+}
+
+.project-filters button {
+  min-width: 90px;
+  min-height: 40px;
+
+  padding: 0 16px;
+
+  border: 1px solid var(--mat-sys-outline);
+  border-radius: 999px;
+
+  color: var(--mat-sys-on-surface);
+  background: transparent;
+
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-filters button:hover {
+  color: var(--mat-sys-primary);
+  border-color: var(--mat-sys-primary);
+  transform: translateY(-2px);
+}
+
+.project-filters button:active {
+  transform: translateY(0);
+}
+
+.project-filters button.active {
+  color: var(--mat-sys-on-primary);
+  background: var(--mat-sys-primary);
+  border-color: var(--mat-sys-primary);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project {
+  position: relative;
+
+  min-height: 330px;
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 16px;
+
+  background: var(--mat-sys-surface-container);
+
+  box-shadow: none;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--mat-sys-primary);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.project mat-card-content {
+  position: relative;
+
+  min-height: 330px;
+  padding: 30px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.project-category {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--mat-sys-primary);
+
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   COMING SOON
+========================================= */
+
+.coming-soon {
+  display: inline-flex;
+  align-items: center;
+
+  margin-left: 8px;
+  padding: 5px 9px;
+
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 999px;
+
+  color: var(--mat-sys-on-surface-variant);
+  background: var(--mat-sys-surface-container-high);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   PROJECT TITLE
+========================================= */
+
+.project h3 {
+  margin: 80px 0 15px;
+
+  color: var(--mat-sys-on-surface);
+
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.project-description {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: var(--mat-sys-on-surface-variant);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   TECHNOLOGIES
+========================================= */
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin-top: 20px;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 9px;
+
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 6px;
+
+  color: var(--mat-sys-on-surface-variant);
+  background: var(--mat-sys-surface-container-high);
+
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.tech-chip:hover {
+  color: var(--mat-sys-primary);
+  border-color: var(--mat-sys-primary);
+}
+
+
+/* =========================================
+   PROJECT LINK
+========================================= */
+
+.project-link {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--mat-sys-primary);
+  background: color-mix(
+    in srgb,
+    var(--mat-sys-primary) 10%,
+    transparent
+  );
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.project-link:hover {
+  transform: translate(3px, -3px);
+
+  background: color-mix(
+    in srgb,
+    var(--mat-sys-primary) 18%,
+    transparent
+  );
+}
+
+.project-link mat-icon {
+  font-size: 20px;
+}
+
+
+/* =========================================
+   COMING SOON ICON
+========================================= */
+
+.coming-soon-icon {
+  cursor: default;
+}
+
+.coming-soon-icon:hover {
+  transform: none;
+}
+
+.coming-soon-icon mat-icon {
+  font-size: 20px;
+}
+
+
+/* =========================================
+   DISABLED LINK
+========================================= */
+
+.disabled-link {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.disabled-link:hover {
+  transform: none;
+}
+
+
+/* =========================================
+   NO PROJECTS
+========================================= */
+
+.no-projects {
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 200px;
+
+  color: var(--mat-sys-on-surface-variant);
+
+  text-align: center;
+}
+
+.no-projects mat-icon {
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+.no-projects p {
+  margin: 0;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .page {
+    padding: 120px 30px 80px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .page {
+    padding: 100px 20px 60px;
+  }
+
+  .section-header {
+    gap: 14px;
+  }
+
+  .project-filters {
+    margin-top: 40px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project {
+    min-height: 300px;
+  }
+
+  .project mat-card-content {
+    min-height: 300px;
+    padding: 24px;
+  }
+
+  .project h3 {
+    margin-top: 60px;
+    font-size: 23px;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .page {
+    padding: 90px 16px 50px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+  }
+
+  .section-badge {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 2.5rem;
+  }
+
+  .section-description {
+    font-size: 13px;
+  }
+
+  .project-filters {
+    gap: 6px;
+    margin-top: 35px;
+  }
+
+  .project-filters button {
+    min-width: auto;
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .project mat-card-content {
+    padding: 20px;
+  }
+
+  .project h3 {
+    margin-top: 55px;
+    font-size: 21px;
+  }
+
+  .project-description {
+    font-size: 13px;
+  }
+}

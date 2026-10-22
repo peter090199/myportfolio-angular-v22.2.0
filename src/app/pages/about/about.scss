@@ -1,0 +1,104 @@
+.about-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.section-number {
+  display: inline-block;
+  padding: 6px 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  background: #6c757d;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.section-label {
+  margin: 0 0 12px;
+  color: #8178ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.about-container h1 {
+  max-width: 850px;
+  margin: 0 0 40px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.about-container h1 span {
+  color: #8178ff;
+}
+
+.about-card {
+  max-width: 800px;
+  background: transparent;
+  color: #f5f7ff;
+  border: none;
+  box-shadow: none;
+}
+
+.about-card mat-card-content {
+  padding: 0;
+}
+
+.about-card p {
+  margin: 0 0 18px;
+  color: #9a9ead;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-card .intro {
+  color: #f5f7ff;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+
+/* Fade animation */
+
+.about-container {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aboutFadeIn 0.7s ease forwards;
+}
+
+@keyframes aboutFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 80px 20px;
+  }
+
+  .about-container h1 {
+    font-size: 40px;
+  }
+
+  .about-card .intro {
+    font-size: 18px;
+  }
+
+  .about-card p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,19 @@
+<section class="container">
+ <span class="section-badge">03</span>
+  <h2 class="section-title">Skills<span></span></h2>
+  <div class="row g-4 mt-3">
+    @for (skill of skills; track skill[0]; let i = $index) {
+      <div class="col-12 col-md-6 col-lg-4">
+        <mat-card class="skill-card" [style.animation-delay]="(i * 100) + 'ms'">
+          <mat-card-content>
+            <div class="skill-header">
+              <strong>{{ skill[0] }}</strong>
+              <span>{{ skill[1] }}%</span>
+            </div>
+            <mat-progress-bar mode="determinate" [value]="skill[1]"></mat-progress-bar>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    }
+  </div>
+</section>
